@@ -37,8 +37,8 @@ public class FT {
     }
 
     public static void doAsynchrouns() throws ExecutionException, InterruptedException {
-        Future<Boolean> futureSomething = executorService.submit(() -> getSomething());
-        Future<Boolean> futureAnotherThing = executorService.submit(() -> getAnotherThing());
+        Future<Boolean> futureSomething = executorService.submit(FT::getSomething);
+        Future<Boolean> futureAnotherThing = executorService.submit(FT::getAnotherThing);
 
         boolean didGetSomething = futureSomething.get();
         boolean didGetAnotherThing = futureAnotherThing.get();
